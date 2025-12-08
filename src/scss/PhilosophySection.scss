@@ -1,0 +1,226 @@
+.philosophy {
+  background-color: #1c1b1a;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    width: 1280px;
+    margin: 0 auto;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__left {
+    width: 575px;
+    margin-left: 50px;
+    color: #f5f3f0;
+  }
+
+  &__line {
+    width: 200px;
+    height: 1px;
+    background-color: #ffffff;
+    margin: 80px 0 70px 0;
+  }
+
+  &__title {
+    font-family: "GT Eesti Pro Display", sans-serif;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 130%;
+    color: #f5f3f0;
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    width: 500px;
+    font-family: "GT Eesti Pro Display", sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f5f3f0;
+    margin-bottom: 60px;
+  }
+
+  &__subblock {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__square {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    margin-right: 10px;
+  }
+
+  &__subtitle {
+    font-family: "GT Eesti Pro Display", sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 150%;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  &__subtext {
+    font-family: "GT Eesti Pro Display", sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 150%;
+    color: #ffffff;
+    opacity: 50%;
+    margin-top: 0;
+    margin-bottom: 112px;
+    margin-left: 5px;
+  }
+
+  &__image {
+    width: 575px;
+    height: 584px;
+    object-fit: cover;
+    margin-right: 50px;
+  }
+}
+
+/* -------- ССЫЛКА "узнать больше..." -------- */
+
+.philosophy__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+
+  font-family: "GT Eesti Pro Display", sans-serif;
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 150%;
+  color: #f5f3f0;
+  text-decoration: underline;
+
+  margin-bottom: 100px;
+  cursor: pointer;
+
+  &:hover {
+    .philosophy__arrow img {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+.philosophy__arrow img {
+  width: 20px;
+  height: 20px;
+  transition: 0.3s ease;
+}
+
+/* ----- MOBILE VERSION ----- */
+
+@media (max-width: 768px) {
+  .philosophy--mobile {
+    background: #1c1b1a;
+    color: #fff;
+    padding: 50px 0px 0px 20px;
+    box-sizing: border-box;
+  }
+
+  .philosophy__mobile-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  /* Линия */
+  .philosophy__line {
+    width: 174px;
+    height: 1px;
+    background: #fff;
+    margin: 0 0 30px 0;
+  }
+
+  /* Заголовок */
+  .philosophy__title {
+    width: 100%;
+    font-size: 28px;
+    line-height: 130%;
+    margin: 0;
+  }
+
+  .philosophy__bottom {
+    position: relative;
+    width: 100%;
+    height: 350px; /* высота секции под статую */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  /* Текст */
+  .philosophy__text {
+    width: calc(100% - 40px);
+    font-size: 14px;
+    line-height: 150%;
+    opacity: 0.9;
+    margin-bottom: 50px;
+  }
+
+  /* Ссылка */
+  .philosophy__more {
+    font-size: 14px;
+    text-decoration: underline;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  /* Статуя */
+  .philosophy__image-wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 345px;
+    height: 350px;
+    overflow: visible;
+  }
+
+  .philosophy__image {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+  }
+
+  /* Философия */
+
+  .philosophy__subblock {
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .philosophy__subtitle {
+    font-size: 14px;
+  }
+
+  .philosophy__subtext {
+    position: relative;
+    font-size: 12px;
+    opacity: 0.8;
+    z-index: 2;
+    margin-bottom: 30px;
+  }
+
+  .philosophy__square {
+    width: 15px;
+    height: 15px;
+    background: #fff;
+  }
+}

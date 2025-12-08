@@ -1,0 +1,83 @@
+/* src/scss/AutographSection.scss */
+
+.autograph {
+  background: #f5f3f0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    width: 1180px;
+    margin: 0 auto;
+    padding: 40px 0 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 110px;
+  }
+
+  &__card {
+    width: 545px;
+    height: 107px;
+    border-radius: 20px;
+    background: #f5f3f0;
+    padding: 47px 30px;
+
+    /* четыре тени из макета */
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15),
+      -4px -4px 20px rgba(255, 255, 255, 0.5),
+      inset 4px 4px 4px rgba(255, 255, 255, 0.6),
+      inset -4px -4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  &__quote {
+    margin: 0;
+    font-family: "GT Eesti Pro Display", sans-serif;
+    font-weight: 100; /* Thin */
+    font-size: 16px;
+    line-height: 150%;
+    color: #1c1b1a;
+    text-align: left;
+  }
+
+  &__logo-wrap {
+    width: 465px;
+    height: 200px;
+    border-radius: 30px;
+    background: #f5f3f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__logo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+/* мобильный адаптив */
+
+@media (max-width: 768px) {
+  .autograph {
+    &__container {
+      width: calc(100% - 40px);
+      padding: 60px 0 0px;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    &__card {
+      width: calc(100% - 40px);
+
+      height: auto;
+      padding: 40px 20px;
+    }
+
+    &__logo-wrap {
+      width: 100%;
+    }
+  }
+}

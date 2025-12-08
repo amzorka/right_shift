@@ -1,0 +1,249 @@
+.cases2 {
+  background: #f5f3f0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: #1c1b1a;
+
+  &__container {
+    width: 1180px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 80px;
+    border-top: 1px solid #1c1b1a;
+    margin-top: 30px;
+  }
+
+  &__columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  /* Левая половина */
+
+  &__subtitle {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #1c1b1a;
+    margin-bottom: 20px;
+    margin-top: 0;
+  }
+
+  &__text {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: #1c1b1a;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  /* Сетка логотипов */
+  &__logos {
+    width: 500px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
+    column-gap: 60px;
+    margin-bottom: 0;
+    align-items: center;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  /* Разделительная полоса */
+  &__divider {
+    width: 575px;
+    height: 1px;
+    background: rgba(28, 27, 26, 0.2);
+    margin: 25px 0;
+  }
+
+  /* AI изображения */
+  &__images-row {
+    display: flex;
+    gap: 30px;
+
+    img {
+      width: auto;
+      height: 150px;
+      object-fit: cover;
+    }
+  }
+
+  /* Вертикальная линия между половинами */
+  &__vertical-line {
+    position: absolute;
+    left: 575px;
+    top: 0;
+    width: 1px;
+    height: 600px;
+    background: rgba(28, 27, 26, 0.2);
+  }
+
+  /* Правая половина */
+
+  /* Сетка 2 строки изображений */
+  &__grid {
+    display: grid;
+
+    grid-template-columns: 278px 124px 113px;
+    gap: 20px 30px;
+    justify-items: start;
+    align-items: start;
+  }
+
+  /* Нижний блок "КЕЙСЫ" */
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 40px;
+  }
+
+  &__footer-title {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 150%;
+    color: #1c1b1a;
+  }
+
+  &__square {
+    width: 20px;
+    height: 20px;
+    background: #1c1b1a;
+  }
+
+  &__footer-text {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 150%;
+    color: rgba(28, 27, 26, 0.6);
+  }
+}
+
+@media (max-width: 768px) {
+  .cases2__left,
+  .cases2__right {
+    width: 100%;
+  }
+
+  .cases2 {
+    &__container {
+      width: 100%;
+      border-top: 1px solid rgba(28, 27, 26, 0.2);
+    }
+
+    &__subtitle {
+      width: 100%;
+      margin-left: 20px;
+    }
+
+    &__text {
+      width: calc(100% - 40px);
+      margin-left: 20px;
+    }
+
+    &__block {
+      width: 100%;
+    }
+
+    &__columns {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      width: 100%;
+    }
+
+    &__logos {
+      width: 100%;
+      grid-template-columns: repeat(3, max-content);
+      margin-left: 20px;
+    }
+
+    &__divider {
+      width: 100%;
+    }
+
+    &__vertical-line {
+      display: none;
+    }
+  }
+
+  .cases2__images-row {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 0 !important; /* убирает пробелы */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .cases2__images-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cases2__slide {
+    flex: 0 0 auto !important;
+    height: 250px !important;
+    width: auto !important;
+    border-radius: 10px;
+    object-fit: cover;
+    scroll-snap-align: start;
+    margin-right: 20px !important;
+  }
+
+  .cases2__slide:last-child {
+    margin-right: 0 !important;
+  }
+
+  .cases2__grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    gap: 0 !important;
+
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 10px;
+  }
+
+  .cases2__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* каждая картинка — отдельный слайд */
+  .cases2__brand {
+    flex: 0 0 auto !important;
+    height: 250px !important; /* как ты хотел */
+    width: auto !important;
+    border-radius: 10px;
+    object-fit: cover;
+    scroll-snap-align: start;
+    margin-right: 20px !important;
+  }
+
+  .cases2__brand:last-child {
+    margin-right: 0 !important;
+  }
+
+  .cases2__brand:first-child {
+    width: 278px !important;
+  }
+}

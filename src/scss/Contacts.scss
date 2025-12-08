@@ -1,0 +1,178 @@
+.contacts {
+  width: 100%;
+  background: #f7f5f1;
+  padding-top: 140px;
+
+  &__container {
+    width: 1180px;
+    margin: 0 auto;
+  }
+
+  /* КОНТАКТЫ */
+  &__subtitle {
+    font-family: "GT Eesti Pro Display";
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  /* МЫ НА СВЯЗИ */
+  &__title {
+    font-family: "GT Eesti Pro Display";
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 150px;
+  }
+
+  /* Левый текст */
+  &__desc {
+    width: 380px;
+    font-family: "GT Eesti Pro Display";
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 150%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__left {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Блок справа */
+  &__right {
+    width: 420px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .mt {
+    margin-top: 30px;
+  }
+
+  .mt-small {
+    margin-top: 20px;
+  }
+
+  &__icon {
+    width: 30px;
+    height: auto;
+  }
+
+  &__label {
+    font-family: "GT Eesti Pro Display";
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &__label-small {
+    font-family: "GT Eesti Pro Display";
+    font-size: 14px;
+    font-weight: 100;
+    opacity: 0.8;
+    margin-bottom: 3px;
+  }
+
+  &__link {
+    font-family: "GT Eesti Pro Display";
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: underline;
+    margin-top: 6px;
+
+    &--big {
+      font-size: 32px;
+      font-weight: 400;
+      text-decoration: underline;
+      color: inherit;
+    }
+  }
+
+  &__mail {
+    font-family: "GT Eesti Pro Display";
+    font-size: 32px;
+    font-weight: 400;
+    text-decoration: underline;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+
+  /* QR блок */
+  &__qr-block {
+    margin-top: 30px;
+  }
+
+  &__qr {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+  }
+
+  &__qr-caption {
+    font-family: "GT Eesti Pro Display";
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 150%;
+    opacity: 0.8;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts {
+    padding: 0;
+
+    .mt {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    &__container {
+      width: calc(100% - 40px);
+      padding-top: 200px;
+    }
+
+    &__top {
+      flex-direction: column;
+    }
+
+    &__left {
+      width: 100%;
+    }
+
+    &__right {
+      width: 100%;
+    }
+
+    &__subtitle {
+      font-size: 12px;
+    }
+
+    &__title {
+      font-size: 32px;
+    }
+
+    &__desc {
+      width: 100%;
+      margin-bottom: 80px;
+    }
+
+    &__qr-block {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,165 @@
+.design-cards {
+  background: #f5f3f0;
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    width: 1180px;
+    display: flex;
+    justify-content: start;
+    gap: 16px;
+    margin-bottom: 120px;
+  }
+
+  .content-card {
+    width: 284px;
+    height: 506px;
+    box-sizing: border-box;
+    background: #1c1b1a;
+    border-radius: 30px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+
+    box-shadow: inset 2px 2px 4px rgba(255, 255, 255, 0.5),
+      inset -4px -4px 10px rgba(0, 0, 0, 0.7),
+      inset 4px 4px 4px rgba(255, 255, 255, 0.3);
+
+    &__title {
+      font-family: "GT Eesti Pro Display";
+      font-weight: 400;
+      font-size: 18px;
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 20px;
+      margin-top: 0;
+    }
+
+    &__text {
+      font-family: "GT Eesti Pro Display";
+      font-weight: 100;
+      font-size: 14px;
+      line-height: 150%;
+      text-align: center;
+      color: #f5f3f0;
+      opacity: 80%;
+      margin-bottom: 20px;
+      margin-top: 0;
+    }
+
+    &__features {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto auto;
+      width: 100%;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+        font-family: "GT Eesti Pro Display";
+        font-size: 16px;
+        color: #f5f3f0;
+        font-weight: 400;
+
+        img {
+          width: 15px;
+          height: auto;
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    &__button {
+      width: 200px;
+      height: 40px;
+      border: none;
+      border-radius: 50px;
+      background: #c47fd9;
+      font-family: "GT Eesti Pro Display";
+      font-size: 16px;
+      font-weight: 100;
+      text-decoration: underline;
+      color: #ffffff;
+      cursor: pointer;
+      transition: background 0.5s ease;
+
+      &:hover {
+        background: #bad980;
+      }
+    }
+  }
+
+  .first-card {
+    position: relative;
+    box-shadow:
+    /* Drop shadow (фиолетовый) */ 0px 0px 15px
+        rgba(196, 127, 217, 1),
+      /* Inner shadow 1 (белый 50%) */ inset 2px 2px 4px
+        rgba(255, 255, 255, 0.5),
+      /* Inner shadow 2 (чёрный 70%) */ inset -4px -4px 10px rgba(0, 0, 0, 0.7),
+      /* Inner shadow 3 (белый 30%) */ inset 4px 4px 4px
+        rgba(255, 255, 255, 0.3);
+  }
+
+  .first-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 3px; /* ширина рамки */
+    background: linear-gradient(90deg, #ffffff 0%, #c47fd9 23%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .gazgolder {
+    font-size: 12px;
+    font-weight: 400;
+    color: #c47fd9;
+    text-decoration: none;
+  }
+
+  .trend {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    p {
+      font-size: 12px;
+      color: #c47fd9;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .design-cards {
+    &__container {
+      width: calc(100% - 40px) !important;
+      flex-direction: column;
+    }
+
+    .content-card {
+      width: 100% !important;
+
+      &__title {
+        font-size: 20px;
+      }
+
+      &__text {
+        margin-bottom: 50px;
+      }
+
+      &__features li {
+        font-size: 14px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

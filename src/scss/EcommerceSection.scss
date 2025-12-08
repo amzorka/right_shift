@@ -1,0 +1,142 @@
+.ecommerce {
+  background-color: #1c1b1a;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #f5f3f0;
+
+  &__container {
+    width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* Заголовок и линия справа */
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 80px;
+    margin-bottom: 50px;
+  }
+
+  &__title {
+    font-family: "GT Eesti Pro Display", sans-serif;
+    font-weight: 100;
+    font-size: 48px;
+    line-height: 150%;
+    color: #f5f3f0;
+    margin: 0 0 0 50px;
+
+    .ecommerce__highlight {
+      font-weight: 500;
+    }
+  }
+
+  &__line {
+    width: 202px;
+    height: 1px;
+    background-color: #f5f3f0;
+    margin-right: 50px;
+  }
+
+  /* Контент: текст и изображение */
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 100px;
+  }
+
+  &__text {
+    font-family: "GT Eesti Pro Display", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    width: 575px;
+    height: 391px; /* как в макете */
+    color: #f5f3f0;
+    margin-top: 0;
+    margin-left: 50px;
+    margin-bottom: 80px;
+  }
+
+  &__link,
+  a {
+    color: #c47fd9;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+    transition: color 0.5s ease;
+
+    &:hover {
+      color: #bad980;
+    }
+  }
+
+  &__image {
+    height: 391px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  &__image2 {
+    display: none;
+  }
+}
+
+@media (min-width: 1281px) {
+  .ecommerce {
+    &__image {
+      display: none;
+    }
+
+    &__image2 {
+      height: 391px;
+      width: auto;
+      display: block !important;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .ecommerce {
+    &__container {
+      width: calc(100% - 40px) !important;
+      flex-direction: column !important;
+    }
+
+    &__header {
+      margin-bottom: 30px !important;
+    }
+
+    &__title {
+      font-size: 24px !important;
+      margin-left: 0 !important;
+    }
+
+    &__line {
+      display: none !important;
+    }
+
+    &__text {
+      font-size: 14px !important;
+      width: 100% !important;
+      margin-left: 0 !important;
+    }
+
+    &__content {
+      gap: 0;
+      flex-direction: column;
+    }
+
+    &__image {
+      display: none;
+    }
+
+    &__image2 {
+      display: block !important;
+      width: 100%;
+    }
+  }
+}

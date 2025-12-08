@@ -1,0 +1,359 @@
+.services {
+  background: #f5f3f0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  &__container {
+    width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  /* Левая колонка */
+  &__left {
+    width: 430px;
+    padding-left: 50px;
+  }
+  &__title {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 32px;
+    line-height: 150%;
+    color: #1c1b1a;
+    margin: 0 0 773px 0;
+  }
+  &__link {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 85px;
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 150%;
+    color: #1c1b1a;
+    text-decoration: underline;
+
+    .services__arrow {
+      width: 20px;
+      height: 20px;
+      transition: 0.3s ease;
+    }
+
+    &:hover .services__arrow {
+      transform: rotate(-90deg);
+    }
+  }
+  &__footer {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 120px;
+  }
+  &__square {
+    width: 20px;
+    height: 20px;
+    background: #1c1b1a;
+  }
+  &__footer-title {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 150%;
+    color: #1c1b1a;
+    margin: 0;
+  }
+  &__footer-text {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 150%;
+    color: rgba(28, 27, 26, 0.6);
+    margin-left: -25px;
+    margin-top: 0;
+  }
+
+  /* Правая колонка */
+  .services__right {
+    width: 818px; /* ширина линий по макету */
+    margin-right: 30px; /* внешний отступ справа */
+    margin-top: 12px;
+  }
+
+  /* Карточка услуги: одна линия СВЕРХУ у каждой и одна линия СНИЗУ только у последней */
+  .services__item {
+    width: 818px;
+    border-top: 1px solid #1c1b1a;
+    transition: background 0.3s ease-in-out;
+    /* bottom-линию добавим только последней карточке */
+    &:last-child {
+      border-bottom: 1px solid #1c1b1a;
+    }
+
+    padding: 16px 20px 16px 0; /* 20 сверху/снизу, 50 справа */
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: 230px 1fr; /* слева — название, справа — контент */
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "title desc"
+      "title list";
+    column-gap: 40px;
+
+    &:hover {
+      background: #c47fd9;
+
+      .services__item-title,
+      .services__item-desc,
+      .services__item-list li,
+      ::before {
+        color: #ffffff;
+      }
+    }
+  }
+
+  /* важно: убираем «контейнерность» header, чтобы его дети попали в грид родителя */
+  .services__item-header {
+    display: contents;
+  }
+
+  /* Области грида */
+  .services__item-title {
+    grid-area: title;
+    margin: 0;
+    font-family: "GT Eesti Pro Display";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: #1c1b1a;
+    margin-left: 20px;
+  }
+  .services__item-desc {
+    grid-area: desc;
+    margin: 0;
+    font-family: "GT Eesti Pro Display";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: right;
+    letter-spacing: 0.02em;
+    color: #1c1b1a;
+  }
+  .services__item-list {
+    list-style: none;
+    grid-area: list;
+    margin: 0;
+    text-align: right;
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 150%;
+    color: #1c1b1a;
+
+    li {
+      position: relative;
+      font-family: "GT Eesti Pro Display";
+      font-weight: 100;
+      font-size: 14px;
+      line-height: 150%;
+      color: #1c1b1a;
+
+      &::before {
+        content: "•";
+        position: relative;
+        right: 10px; /* прижимаем к правому краю */
+        top: 0;
+        font-size: 14px;
+        color: #1c1b1a;
+      }
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               MOBILE VERSION                               */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .services {
+    background: #f5f3f0;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* скрываем десктопный контейнер */
+    &__container {
+      display: none;
+    }
+  }
+
+  /* ------------------------- МОБИЛЬНЫЕ БЛОКИ ------------------------- */
+
+  .services-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Заголовок */
+  .services-mobile__title {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 24px;
+    line-height: 150%;
+    color: #1c1b1a;
+    margin: 0 0 50px 20px;
+  }
+
+  /* Список услуг */
+  .services-mobile__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .services-mobile__item {
+    padding: 30px 20px;
+    border-top: 1px solid #1c1b1a57;
+    transition: background 0.3s ease-in-out;
+
+    &:hover .forward-arrow {
+      filter: brightness(0) invert(1);
+    }
+
+    &:hover {
+      background: #c47fd9;
+
+      .services-mobile__item-title,
+      .services-mobile__item-desc,
+      .services-mobile__item-list li,
+      .services-mobile__btn,
+      .forward-arrow,
+      ::before {
+        color: #ffffff;
+      }
+    }
+
+    &:last-child {
+      border-bottom: 1px solid #1c1b1a57;
+    }
+  }
+
+  .services-mobile__item-title {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 400;
+    font-size: 18px;
+    color: #1c1b1a;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+  }
+
+  .services-mobile__item-desc {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 400;
+    font-size: 14px;
+    color: #1c1b1a;
+    line-height: 150%;
+    margin: 0 0 15px 0;
+  }
+
+  .services-mobile__item-list {
+    list-style: none;
+    margin: 0 0 30px 10px;
+    padding: 0;
+  }
+
+  .services-mobile__item-list li {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 150%;
+    color: #1c1b1a;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 14px;
+      color: #1c1b1a;
+    }
+  }
+
+  .services-mobile__forward {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: end;
+  }
+
+  .forward-arrow {
+    transition: filter 0.3s ease;
+  }
+
+  /* Кнопка внутри карточки */
+  .services-mobile__btn {
+    border: none;
+    background: transparent;
+    font-family: "GT Eesti Pro Display";
+    font-weight: 400;
+    font-size: 14px;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    padding: 0;
+    color: #1c1b1a;
+    display: flex;
+    justify-content: end;
+    text-align: right;
+  }
+
+  /* Ссылка "изучить все услуги" */
+  .services-mobile__all {
+    margin: 50px 0 80px 0;
+    font-family: "GT Eesti Pro Display";
+    font-weight: 300;
+    font-size: 16px;
+    color: #1c1b1a;
+    text-decoration: underline;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Нижний блок (квадрат + текст) */
+  .services-mobile__footer {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 120px;
+    margin-left: 20px;
+  }
+
+  .services-mobile__square {
+    width: 20px;
+    height: 20px;
+    background: #1c1b1a;
+  }
+
+  .services-mobile__footer h3 {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 150%;
+    color: #1c1b1a;
+    margin: 0 0 15px 0;
+  }
+
+  .services-mobile__footer p {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 12px;
+    line-height: 150%;
+    color: rgba(28, 27, 26, 0.6);
+    margin-left: -25px;
+    margin-top: 0;
+  }
+}

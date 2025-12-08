@@ -1,0 +1,106 @@
+.screenshots {
+  background-color: #f5f3f0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: #1c1b1a;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+
+  &__container {
+    width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* Заголовок */
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+  }
+
+  &__title {
+    font-family: "GT Eesti Pro Display", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    color: #1c1b1a;
+    margin: 0;
+  }
+
+  &__line {
+    width: 200px;
+    height: 1px;
+    background-color: #1c1b1a;
+    margin-top: 10px;
+    margin-right: 50px;
+  }
+
+  /* Подзаголовочный текст */
+  &__text {
+    font-family: "GT Eesti Pro Display", sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 150%;
+    color: #1c1b1a;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+  }
+
+  /* Сетка изображений */
+  &__grid {
+    margin: 0 auto 80px 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 383px);
+    grid-auto-rows: 195px;
+    gap: 20px 25px; /* 20 — между строками, 15 — между столбцами */
+  }
+
+  &__image {
+    width: 393px;
+    height: 195px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .screenshots {
+    &__container {
+      width: calc(100% - 40px);
+      flex-direction: column;
+    }
+
+    &__text {
+      margin-left: 0;
+      font-size: 14px;
+    }
+
+    &__header {
+      margin-left: 0;
+    }
+
+    &__line {
+      display: none;
+    }
+
+    &__grid {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto 80px;
+    }
+
+    &__image {
+      width: 100%;
+    }
+  }
+}

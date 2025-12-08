@@ -1,0 +1,389 @@
+.contact {
+  background: #1c1b1a;
+  color: #f5f3f0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  /* ——— Левая часть ——— */
+  &__left {
+    width: 373px;
+    margin-left: 50px;
+  }
+
+  &__title {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 32px;
+    line-height: 150%;
+    color: #f5f3f0;
+    margin: 80px 0 30px 0;
+  }
+
+  &__subtitle {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 150%;
+    color: #f5f3f0;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: rgba(245, 243, 240, 0.9);
+    text-decoration: none;
+    width: 100%;
+
+    .contact__text--muted {
+      color: rgba(245, 243, 240, 0.5);
+      font-weight: 400;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  &__footer {
+    display: block;
+    gap: 10px;
+    margin-top: 225px;
+  }
+
+  &__square {
+    width: 20px;
+    height: 20px;
+    background: #f5f3f0;
+  }
+
+  &__footer-title {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f5f3f0;
+    margin: 0;
+  }
+
+  &__footer-text {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 150%;
+    color: rgba(245, 243, 240, 0.6);
+    margin-top: 0;
+  }
+
+  /* ——— Правая часть (форма) ——— */
+  &__right {
+    width: 575px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+  }
+
+  &__form-title {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: #f5f3f0;
+    margin: 80px 0 30px 0;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__input {
+    width: 545px;
+    height: 40px;
+    background: #f5f3f0;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 0 15px;
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 16px;
+    color: #1c1b1a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: text;
+    position: relative;
+
+    &::placeholder {
+      color: rgba(28, 27, 26, 0.6);
+    }
+
+    &.error {
+      box-shadow: 0 0 0 1px #ff6a6a inset;
+    }
+
+    &--select {
+      cursor: pointer;
+
+      &.open {
+        border-bottom-width: 0; /* убираем нижнюю границу */
+        border-radius: 5px 5px 0 0; /* скругление только сверху */
+        border-bottom: 1px solid #605f5f;
+      }
+    }
+
+    &--half {
+      width: 409px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &.small {
+      width: 137px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+
+      &.opened {
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  .arrow {
+    font-size: 16px;
+    transform: rotate(0);
+    transition: transform 0.2s ease;
+  }
+
+  &__dropdown {
+    position: relative;
+    width: 545px;
+  }
+
+  &__dropdown-list {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between; /* равномерное распределение */
+    top: 41px;
+    left: 0;
+    width: 575px;
+    background: #f5f3f0;
+    border-top: 0; /* убираем верхнюю границу, чтобы слилось с инпутом */
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    z-index: 5;
+    animation: fadeIn 0.25s ease forwards;
+
+    &.small {
+      width: 168px;
+      display: flex;
+      top: 41px;
+      flex-direction: column !important;
+    }
+  }
+
+  &__dropdown-item {
+    padding: 8px 15px;
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 14px;
+    color: #1c1b1a;
+    cursor: pointer;
+    transition: color 0.5s ease-in-out;
+
+    &:hover {
+      color: #c47fd9;
+    }
+  }
+
+  .contact__dropdown-list.small .contact__dropdown-item {
+    border-top: 1px solid #1c1b1a;
+    border-right: 1px solid #1c1b1a;
+
+    padding: 15px;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid #1c1b1a;
+      border-radius: 0 0 5px 5px;
+    }
+  }
+
+  &__dropdown-input {
+    margin-top: 10px;
+    width: calc(100% - 30px);
+    margin-left: 15px;
+    height: 35px;
+    border-radius: 4px;
+    border: 1px solid #ffffff;
+    outline: none;
+    padding: 0 10px;
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 15px;
+  }
+
+  &__contact-row {
+    width: 575px;
+    position: relative;
+    display: flex;
+    gap: 1px;
+  }
+
+  &__textarea {
+    width: 545px;
+    height: 207px;
+    background: #f5f3f0;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 16px;
+    color: #1c1b1a;
+    resize: none;
+
+    &::placeholder {
+      color: rgba(28, 27, 26, 0.6);
+    }
+  }
+
+  &__agreement {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 150%;
+    color: #ffffff;
+    opacity: 80%;
+    margin: 5px 0 0px 0;
+
+    a {
+      color: #ffffff;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
+
+  .arrow {
+    width: 15px;
+    height: 8px;
+    flex-shrink: 0;
+    transition: transform 0.35s ease-in-out; /* плавное вращение */
+    transform-origin: center; /* точка вращения по центру */
+    position: absolute;
+    right: 15px;
+    top: 45%;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
+  .arrow-first {
+    right: 0;
+  }
+
+  .arrow.open {
+    transform: rotate(180deg);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    &__container {
+      width: calc(100% - 40px);
+      flex-direction: column;
+    }
+
+    &__left {
+      margin-left: 0;
+      width: 100%;
+    }
+
+    &__right {
+      width: 100%;
+    }
+
+    &__title {
+      font-size: 28px;
+    }
+
+    &__text {
+      font-size: 16px;
+      width: 100%;
+    }
+
+    &__dropdown {
+      width: 100%;
+    }
+
+    &__dropdown-item {
+      padding: 15px 15px;
+    }
+
+    .contact__dropdown-list {
+      width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact__input.small {
+      width: 90px;
+    }
+
+    .contact__dropdown-list.small {
+      width: 121px;
+    }
+
+    &__input {
+      width: calc(100% - 30px);
+      font-size: 12px;
+    }
+
+    &__contact-row {
+      width: 100%;
+    }
+
+    &__textarea {
+      width: calc(100% - 30px);
+      font-size: 12px;
+    }
+
+    &__agreement {
+      font-size: 12px;
+    }
+
+    &__footer {
+      margin: 0;
+    }
+
+    .arrow-first {
+      right: 15px;
+    }
+  }
+}

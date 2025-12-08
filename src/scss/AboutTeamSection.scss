@@ -1,0 +1,209 @@
+.about-team {
+  background: #1c1b1a;
+  color: #ffffff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0 140px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+
+  &__container {
+    width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+  }
+
+  /* левая колонка */
+
+  &__left {
+    max-width: 620px;
+  }
+
+  &__title {
+    font-family: "GT Eesti Pro Display", sans-serif;
+    font-weight: 400; /* Regular */
+    font-size: 40px;
+    line-height: 130%;
+    margin: 50px 0 30px;
+    text-align: left;
+  }
+
+  &__text {
+    text-align: left;
+    font-family: "GT Eesti Pro Display", sans-serif;
+    font-weight: 100; /* Thin */
+    font-size: 16px;
+    line-height: 150%;
+    margin: 0 0 20px;
+    opacity: 90%;
+  }
+
+  &__link {
+    color: #c47fd9;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #bad980;
+    }
+  }
+
+  /* правая колонка */
+
+  &__right {
+    flex: 0 0 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 50px;
+  }
+
+  &__tag {
+    width: 172px;
+    height: 172px;
+    object-fit: contain;
+  }
+
+  &__stats {
+    width: 470px;
+    height: 180px;
+    max-width: 100%;
+    padding: 60px 40px;
+    border-radius: 30px;
+    background: #1c1b1a;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 60px;
+    column-gap: 80px;
+
+    /* тени: 2 внешних и 2 внутренних, как в Figma */
+    box-shadow: -4px -4px 20px rgba(0, 0, 0, 0.5),
+      4px 4px 10px rgba(255, 255, 255, 0.15),
+      inset -4px -4px 4px rgba(255, 255, 255, 0.5),
+      inset 4px 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  &__stat {
+    align-items: start;
+    width: auto;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  &__stat-caption {
+    font-family: "GT Eesti Pro Display", sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 150%;
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  &__stat-number {
+    font-family: "GT Eesti Pro Display", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    margin: 0;
+
+    span {
+      font-weight: 400;
+      font-size: 24px;
+    }
+  }
+}
+
+/* МОБИЛЬНЫЙ АДАПТИВ */
+
+/* ——— Мобильная версия ——— */
+@media (max-width: 768px) {
+  .about-team {
+    background: #1c1b1a; /* как на твоём скрине */
+    color: #ffffff;
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  .about-team__container {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+  }
+
+  /* Заголовок */
+  .about-team__title {
+    font-size: 22px;
+    line-height: 140%;
+    margin: 0;
+    margin-bottom: 30px;
+    color: #ffffff;
+  }
+
+  /* Картинка — справа сверху */
+  .about-team__tag {
+    width: 83px;
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: -35px;
+  }
+
+  /* Контейнер для позиционирования картинки */
+  .about-team__left {
+    order: 1;
+  }
+
+  /* Текстовые блоки */
+  .about-team__text {
+    font-size: 15px;
+    line-height: 150%;
+    color: #ffffff;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  /* Статистика — отдельная карточка */
+  .about-team__right {
+    flex: 0 0 240px;
+    order: 3;
+  }
+
+  .about-team__stats {
+    background: #1c1b1a;
+    padding: 30px 25px;
+    border-radius: 20px;
+    margin-top: 10px;
+
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+  }
+
+  .about-team__stat-caption {
+    color: #cccccc;
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .about-team__stat-number {
+    font-size: 22px;
+  }
+
+  .about-team__stat-number span {
+    font-size: 14px;
+    color: #cccccc;
+  }
+}

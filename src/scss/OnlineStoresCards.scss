@@ -1,0 +1,148 @@
+.online-stores-cards {
+  background: #f5f3f0;
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    width: 1180px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 120px;
+  }
+
+  .store-card {
+    box-sizing: border-box;
+    width: 575px;
+    height: 720px;
+    background: #1c1b1a;
+    border-radius: 30px;
+    padding: 30px 30px 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+
+    box-shadow: inset 2px 2px 4px rgba(255, 255, 255, 0.5),
+      inset -4px -4px 10px rgba(0, 0, 0, 0.7),
+      inset 4px 4px 4px rgba(255, 255, 255, 0.3);
+
+    &__image {
+      width: 250px;
+      height: 250px;
+      object-fit: contain;
+    }
+
+    &__title {
+      font-family: "GT Eesti Pro Display";
+      font-weight: 400;
+      font-size: 32px;
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 25px;
+      margin-top: 0;
+    }
+
+    &__text {
+      font-family: "GT Eesti Pro Display";
+      font-weight: 100;
+      font-size: 14px;
+      line-height: 150%;
+      text-align: left;
+      color: #f5f3f0;
+      opacity: 80%;
+      margin-bottom: 30px;
+      margin-top: 0;
+    }
+
+    &__features {
+      height: 171px;
+      list-style: none;
+      padding: 0;
+      margin: 0 0 30px 0;
+      width: 100%;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 10px;
+        font-family: "GT Eesti Pro Display";
+        font-size: 16px;
+        color: #f5f3f0;
+        font-weight: 300;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        img {
+          width: 15px;
+          height: auto;
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    &__button {
+      width: 300px;
+      height: 50px;
+      border: none;
+      border-radius: 25px;
+      background: #c47fd9;
+      font-family: "GT Eesti Pro Display";
+      font-size: 16px;
+      font-weight: 100;
+      text-decoration: underline;
+      color: #ffffff;
+      cursor: pointer;
+      transition: background 0.5s ease;
+
+      &:hover {
+        background: #bad980;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .online-stores-cards {
+    &__container {
+      width: calc(100% - 40px);
+      flex-direction: column;
+      margin-bottom: 160px;
+    }
+
+    .store-card {
+      width: 100%;
+      padding: 30px 20px 0 20px;
+
+      &__image {
+        width: 150px !important;
+        height: 150px !important;
+      }
+
+      &__title {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      &__text {
+        text-align: center;
+      }
+
+      &__features {
+        height: auto;
+      }
+
+      &__features li {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      &__button {
+        width: 100%;
+      }
+    }
+  }
+}

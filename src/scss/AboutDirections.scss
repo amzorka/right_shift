@@ -1,0 +1,142 @@
+.directions {
+  background: #f5f3f0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #1c1b1a;
+
+  &__container {
+    width: 1180px;
+    margin: 0 auto;
+    padding: 80px 0;
+  }
+
+  &__title {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 400;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #1c1b1a;
+  }
+
+  /* ====== Список ====== */
+
+  &__list {
+    width: 100%;
+  }
+
+  &__row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 0;
+    border-bottom: 1px solid #1c1b1a;
+
+    text-decoration: none;
+    transition: 0.5s ease;
+    cursor: pointer;
+
+    &:first-child {
+      border-top: 1px solid #1c1b1a;
+    }
+
+    /* Ховер */
+
+    &:hover {
+      background: #c47fd9; // фиолетовый как в макете
+
+      .directions__text {
+        color: #ffffff;
+
+        .bold {
+          color: #ffffff;
+        }
+      }
+
+      .directions__more {
+        span {
+          color: #ffffff;
+        }
+
+        .arrow {
+          filter: brightness(0) invert(1);
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+
+  /* Текст */
+
+  &__text {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 32px;
+    line-height: 150%;
+    color: #1c1b1a;
+    margin: 0;
+    margin-left: 50px;
+
+    .bold {
+      font-weight: 500;
+    }
+  }
+
+  /* Правый блок "подробнее →" */
+
+  &__more {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-right: 50px;
+
+    span {
+      font-family: "GT Eesti Pro Display";
+      font-weight: 300;
+      font-size: 16px;
+      color: #1c1b1a;
+      transition: 0.3s ease;
+      text-decoration: underline;
+    }
+
+    .arrow {
+      width: 20px;
+      height: 20px;
+      transition: 0.3s ease;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .directions {
+    &__container {
+      width: 100%;
+    }
+
+    &__title {
+      font-size: 22px;
+    }
+
+    &__row {
+      height: 90px;
+      box-sizing: border-box;
+    }
+
+    &__text {
+      font-size: 18px;
+      margin-left: 20px;
+      width: 78%;
+    }
+
+    &__more {
+      margin-right: 20px;
+
+      span {
+        display: none;
+      }
+    }
+  }
+}

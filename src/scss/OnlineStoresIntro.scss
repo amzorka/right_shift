@@ -1,0 +1,108 @@
+.online-stores-intro {
+  background: #f5f3f0;
+  display: flex;
+  justify-content: center;
+  padding-top: 120px; // отступ от хэдера
+  padding-bottom: 100px;
+
+  .online-stores-intro__container {
+    width: 1180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .online-stores-intro__text {
+    max-width: 580px;
+  }
+
+  .online-stores-intro__title {
+    font-family: "GT Eesti Pro Display";
+    font-size: 48px;
+    line-height: 130%;
+    font-weight: 100;
+    color: #1c1b1a;
+    margin-bottom: 0;
+    margin-top: 0;
+
+    span {
+      font-weight: 500;
+    }
+  }
+
+  .online-stores-intro__subtitle {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 150%;
+    color: #1c1b1a;
+    margin-top: 30px;
+    margin-bottom: 100px;
+  }
+
+  .online-stores-intro__button {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: "GT Eesti Pro Display";
+    font-size: 14px;
+    color: #ffffff;
+    background: #c47fd9;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 50px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+
+    &:hover {
+      background: #b06dc8;
+    }
+
+    img {
+      width: 18px;
+      height: 18px;
+      transform: translateY(1px);
+    }
+  }
+
+  .online-stores-intro__image {
+    flex-shrink: 0;
+
+    img {
+      width: 575px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .online-stores-intro {
+    &__container {
+      width: calc(100% - 40px) !important;
+      flex-direction: column-reverse;
+    }
+
+    &__text {
+      width: 100%;
+    }
+
+    &__title {
+      font-size: 28px !important;
+      width: 100% !important;
+    }
+
+    &__subtitle {
+      font-size: 16px !important;
+      margin-bottom: 50px !important;
+    }
+
+    &__image img {
+      width: 100% !important;
+    }
+  }
+}

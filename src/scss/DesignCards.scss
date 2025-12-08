@@ -1,0 +1,117 @@
+.design-cards {
+  background: #f5f3f0;
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    width: 1180px;
+    display: flex;
+    justify-content: start;
+    gap: 16px;
+    margin-bottom: 120px;
+  }
+
+  .design-card {
+    width: 284px;
+    height: 506px;
+    box-sizing: border-box;
+    background: #1c1b1a;
+    border-radius: 30px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+
+    box-shadow: inset 2px 2px 4px rgba(255, 255, 255, 0.5),
+      inset -4px -4px 10px rgba(0, 0, 0, 0.7),
+      inset 4px 4px 4px rgba(255, 255, 255, 0.3);
+
+    &__title {
+      font-family: "GT Eesti Pro Display";
+      font-weight: 400;
+      font-size: 18px;
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 20px;
+      margin-top: 0;
+    }
+
+    &__text {
+      font-family: "GT Eesti Pro Display";
+      font-weight: 100;
+      font-size: 14px;
+      line-height: 150%;
+      text-align: center;
+      color: #f5f3f0;
+      opacity: 80%;
+      margin-bottom: 15px;
+      margin-top: 0;
+    }
+
+    &__features {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto auto;
+      width: 100%;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+        font-family: "GT Eesti Pro Display";
+        font-size: 14px;
+        color: #f5f3f0;
+        opacity: 80%;
+        font-weight: 100;
+
+        img {
+          width: 15px;
+          height: auto;
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    &__button {
+      width: 200px;
+      height: 40px;
+      border: none;
+      border-radius: 50px;
+      background: #c47fd9;
+      font-family: "GT Eesti Pro Display";
+      font-size: 16px;
+      font-weight: 100;
+      text-decoration: underline;
+      color: #ffffff;
+      cursor: pointer;
+      transition: background 0.5s ease;
+
+      &:hover {
+        background: #bad980;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .design-cards {
+    &__container {
+      width: calc(100% - 40px) !important;
+      flex-direction: column;
+    }
+
+    .design-card {
+      width: 100%;
+
+      &__title {
+        font-size: 20px;
+      }
+
+      &__text {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}

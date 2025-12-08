@@ -1,0 +1,110 @@
+.values {
+  width: 100%;
+  background: #f5f3f0;
+  padding: 100px 0 100px 0;
+  position: relative;
+
+  /* тень секции по макету */
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+
+  &__container {
+    width: 1180px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__top {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 130%;
+    color: #1c1b1a;
+    margin: 0 0 30px 0;
+  }
+
+  &__text {
+    font-family: "GT Eesti Pro Display";
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 150%;
+    width: 776px;
+    margin: 0 auto 80px auto;
+    color: #1c1b1a;
+  }
+
+  &__text--first {
+    width: 776px;
+    margin: 0 auto;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: flex-start;
+    align-items: start; /* важно — картинка снизу! */
+    gap: 60px;
+  }
+
+  &__tag {
+    background: transparent;
+    width: 172px;
+    height: 172px;
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  &__text--second {
+    width: 776px;
+    margin: 0;
+  }
+}
+
+/* ------- Мобильная версия ------- */
+
+@media (max-width: 768px) {
+  .values {
+    padding: 80px 0 30px 0;
+
+    &__container {
+      width: calc(100% - 40px);
+    }
+
+    &__title {
+      font-size: 22px;
+      line-height: 130%;
+      margin-bottom: 30px;
+    }
+
+    &__text {
+      width: 100%;
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+
+    /* — нижний блок: вертикальная колонка — */
+    &__bottom {
+      display: flex;
+      flex-direction: column-reverse; /* вот это главное */
+      align-items: center;
+      text-align: center;
+      gap: 10px; /* расстояние между текстом и картинкой */
+    }
+
+    &__text--second {
+      width: 100%;
+      margin: 0;
+    }
+
+    &__tag {
+      width: 96px;
+      height: 96px;
+      margin-top: 0;
+      object-fit: contain;
+      align-self: start;
+    }
+  }
+}

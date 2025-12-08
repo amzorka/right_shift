@@ -1,0 +1,163 @@
+.intro-section {
+  width: 100%;
+  display: flex;
+
+  justify-content: center;
+  background-color: #f5f3f0;
+
+  &__container {
+    width: 1280px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: "GT Eesti Pro Display", sans-serif;
+    font-weight: 400;
+    font-size: 233px;
+    line-height: 100%;
+    color: #1c1b1a;
+    margin-bottom: 50px;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  &__subtitle {
+    display: none;
+  }
+
+  &__services {
+    margin-bottom: 60px;
+    text-align: center;
+
+    .intro-section__row {
+      display: flex;
+      justify-content: center;
+      gap: 100px;
+      margin-bottom: 30px;
+    }
+
+    .intro-section__service {
+      font-family: "GT Eesti Pro Display", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      color: #1c1b1a;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #c47fd9;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 80px;
+  }
+
+  &__image {
+    width: 575px;
+    height: 322px;
+    object-fit: cover;
+    border-radius: 30px;
+  }
+
+  &__text-block {
+    width: 575px;
+    height: 322px;
+    color: #1c1b1a;
+    font-family: "GT Eesti Pro Display", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+
+    .intro-section__highlight {
+      opacity: 0.5;
+    }
+  }
+
+  &__button {
+    position: relative;
+    margin-top: 30px;
+    width: 373px;
+    height: 50px;
+    background-color: #c47fd9;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 77.5px;
+    transition: background 0.5s ease;
+
+    &:hover {
+      background-color: #bad980;
+    }
+
+    &-text {
+      font-family: "GT Eesti Pro Display", sans-serif;
+      font-weight: 100;
+      font-size: 16px;
+      line-height: 150%;
+      color: #ffffff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-align: center;
+    }
+
+    &-icon {
+      position: absolute;
+      right: 37px;
+      width: 20px;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  .intro-section__text-block p {
+    margin-bottom: 0;
+  }
+}
+
+/* ============================================= */
+/*               📱 MOBILE VERSION               */
+/* ============================================= */
+
+@media (max-width: 768px) {
+  .online-stores-intro {
+    &__container {
+      width: calc(100% - 40px) !important;
+      flex-direction: column-reverse;
+    }
+
+    &__text {
+      width: 100%;
+    }
+
+    &__title {
+      font-size: 22px !important;
+      margin-top: 50px !important;
+    }
+
+    &__subtitle {
+      font-size: 16px !important;
+      margin-bottom: 50px !important;
+    }
+
+    &__image img {
+      width: 100% !important;
+    }
+
+    .intro-section__button {
+      width: 100%;
+    }
+  }
+}
