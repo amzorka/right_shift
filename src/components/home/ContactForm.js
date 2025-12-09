@@ -78,7 +78,7 @@ export default function ContactForm() {
       setIsSending(true);
       setIsSuccess(false);
 
-      const response = await fetch("http://217.199.252.128:3001/send", {
+      const response = await fetch("https://api.rightshift.dev/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
