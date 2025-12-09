@@ -2,6 +2,7 @@ import arrowIcon from "../../icons/arrow-dark.png";
 import "../../scss/ServicesSection.scss";
 import { useMobile } from "../../hooks/useMobile";
 import forward from "../../icons/forward.png";
+import print from "../../images/long-live-long.png";
 
 export default function ServicesSection() {
   const isMobile = useMobile();
@@ -10,6 +11,7 @@ export default function ServicesSection() {
   const services = [
     {
       title: "Интернет-магазины",
+      link: "/online-stores",
       desc: "Функциональные, быстрые, визуально безупречные решения под любой уровень бизнеса — от бутика до экосистемы.",
       points: [
         "Архитектура, повышающая конверсию и скорость покупки",
@@ -19,6 +21,7 @@ export default function ServicesSection() {
     },
     {
       title: "Лендинги под ключ",
+      link: "/landings",
       desc: "Одностраничные сайты, которые фокусируют внимание, собирают статистику и ведут аудиторию к необходимому действию",
       points: [
         "Разрабатываем лендинги под любой запрос — от идеи до публикации",
@@ -28,6 +31,7 @@ export default function ServicesSection() {
     },
     {
       title: "Корпоративные сайты",
+      link: "/corporative-sites",
       desc: "Цифровое лицо компании, создающее правильное впечатление и формирующее доверие к бренду.",
       points: [
         "Создаём корпоративные сайты под ключ — мы снимем с вас все заботы",
@@ -37,6 +41,7 @@ export default function ServicesSection() {
     },
     {
       title: "Интернет-маркетинг",
+      link: "/marketing",
       desc: "Контекст, таргет, SEO, аналитика. Чистая структура кампаний и измеримый результат без хаоса.",
       points: [
         "Комплексная настройка и ведение Яндекс.Директ, VK Ads",
@@ -46,6 +51,7 @@ export default function ServicesSection() {
     },
     {
       title: "UI/UX-дизайн и брендинг",
+      link: "/design",
       desc: "Разрабатываем дизайн-системы, интерфейсы и айдентику, где каждая деталь подчинена логике и стилю.",
       points: [
         "Исследования и прототипы на основе сценариев пользователя",
@@ -55,6 +61,7 @@ export default function ServicesSection() {
     },
     {
       title: "Мобильные приложения",
+      link: "#contact",
       desc: "Разрабатываем приложения, где технология служит идее, а интерфейс становится продолжением бренда.",
       points: [
         "Проектируем интерфейс под реальные сценарии пользователя",
@@ -73,7 +80,7 @@ export default function ServicesSection() {
 
           <div className="services-mobile__list">
             {services.map((s, i) => (
-              <div className="services-mobile__item" key={i}>
+              <a href={s.link} className="services-mobile__item" key={i}>
                 <h3 className="services-mobile__item-title">{s.title}</h3>
                 <p className="services-mobile__item-desc">{s.desc}</p>
 
@@ -90,13 +97,18 @@ export default function ServicesSection() {
                     style={{ width: "30px", height: "7px" }}
                   />
                 </div>
-              </div>
+              </a>
             ))}
           </div>
 
-          <a href="#" className="services-mobile__all">
+          <button
+            className="services-mobile__all"
+            onClick={() => {
+              window.dispatchEvent(new Event("open-mobile-menu"));
+            }}
+          >
             изучить все услуги
-          </a>
+          </button>
 
           <div className="services-mobile__footer">
             <div className="services-mobile__square"></div>
@@ -111,6 +123,10 @@ export default function ServicesSection() {
         <div className="services__container">
           <div className="services__left">
             <h2 className="services__title">ОСНОВНЫЕ УСЛУГИ</h2>
+            <img
+              src={print}
+              style={{ width: "172px", height: "172px", marginBottom: "134px" }}
+            />
             <a href="#" className="services__link">
               <span>изучить все услуги</span>
               <img src={arrowIcon} alt="arrow" className="services__arrow" />
@@ -129,7 +145,7 @@ export default function ServicesSection() {
 
           <div className="services__right">
             {services.map((s, i) => (
-              <div className="services__item" key={i}>
+              <a href={s.link} className="services__item" key={i}>
                 <div className="services__item-header">
                   <h4 className="services__item-title">{s.title}</h4>
                   <p className="services__item-desc">{s.desc}</p>
@@ -139,7 +155,7 @@ export default function ServicesSection() {
                     <li key={j}>{p}</li>
                   ))}
                 </ul>
-              </div>
+              </a>
             ))}
           </div>
         </div>

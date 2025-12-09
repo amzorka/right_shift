@@ -136,20 +136,23 @@ export default function ContactForm() {
             {/* Проект */}
             {/* Выбор проекта */}
             <div className="contact__dropdown">
-              <input
-                type="text"
-                className={`contact__input contact__input--select ${
-                  isProjectOpen ? "open" : ""
-                } ${errors.projectType ? "error" : ""}`}
-                placeholder="Что будем делать? Нажмите для выбора / введите свое"
-                value={projectType}
-                onChange={(e) => {
-                  setProjectType(e.target.value);
-                  setIsProjectOpen(true);
-                }}
-                onFocus={() => setIsProjectOpen(true)}
-                onBlur={() => setTimeout(() => setIsProjectOpen(false), 200)}
-              />
+              <div className="contact__input-wrapper">
+                <input
+                  type="text"
+                  className={`contact__input-field  contact__input--select ${
+                    isProjectOpen ? "open" : ""
+                  } ${errors.projectType ? "error" : ""}`}
+                  placeholder="Что будем делать? Нажмите для выбора / введите свое"
+                  value={projectType}
+                  onChange={(e) => {
+                    setProjectType(e.target.value);
+                    setIsProjectOpen(true);
+                  }}
+                  onFocus={() => setIsProjectOpen(true)}
+                  onBlur={() => setTimeout(() => setIsProjectOpen(false), 200)}
+                />
+                <span className="contact__input-text"></span>
+              </div>
               <img
                 src={chevron}
                 alt=""

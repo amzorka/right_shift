@@ -147,6 +147,7 @@
 
     .content-card {
       width: 100% !important;
+      height: auto;
 
       &__title {
         font-size: 20px;
@@ -160,6 +161,13 @@
         font-size: 14px;
         margin-bottom: 30px;
       }
+    }
+
+    .content-card__button,
+    a {
+      width: 100%;
+      max-width: 300px;
+      height: 50px;
     }
   }
 }

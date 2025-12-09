@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import MarketingCards from "../components/marketing/MarketingCards";
 import MarketingIntro from "../components/marketing/MarketingIntro";
-import WhyRightShift from "../components/marketing/WhyRightShift";
+import WhyRightShift from "../components/WhyRightShift";
 import ContactForm from "../components/home/ContactForm";
 import "../scss/OnlineStores.scss";
 import { initSmoothScroll } from "../utils/lenis";
@@ -23,7 +23,6 @@ export default function Design() {
       <MarketingCards />
       <MarketingEcommerce />
       <MarketingSection />
-      <ScreenshotsSection />
       <ContactForm />
       <WhyRightShift />
       <Footer />

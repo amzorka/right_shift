@@ -7,6 +7,7 @@ import servicesIcon from "../icons/mobile-menu/services.png";
 import casesIcon from "../icons/mobile-menu/cases.png";
 import aboutIcon from "../icons/mobile-menu/about.png";
 import contactsIcon from "../icons/mobile-menu/contacts.png";
+import { getLenisInstance } from "../utils/lenis";
 
 export default function MobileHeader() {
   // 1. Сначала объявляем state
@@ -18,6 +19,86 @@ export default function MobileHeader() {
   useEffect(() => {
     if (open) document.body.classList.add("menu-open");
     else document.body.classList.remove("menu-open");
+  }, [open]);
+
+  useEffect(() => {
+    const openFromServices = () => setOpen(true);
+
+    window.addEventListener("open-mobile-menu", openFromServices);
+
+    return () =>
+      window.removeEventListener("open-mobile-menu", openFromServices);
+  }, []);
+
+  useEffect(() => {
+    const lenis = getLenisInstance();
+    if (!lenis) return;
+
+    if (open) lenis.stop();
+    else lenis.start();
+  }, [open]);
+
+  // --- Swipe to close ---
+  useEffect(() => {
+    const menu = document.querySelector(".mmenu");
+    if (!menu) return;
+
+    let startY = 0;
+    let currentY = 0;
+    let dragging = false;
+
+    const onTouchStart = (e) => {
+      if (!open) return;
+
+      dragging = true;
+      startY = e.touches[0].clientY;
+      currentY = startY;
+    };
+
+    const onTouchMove = (e) => {
+      if (!dragging) return;
+
+      const touchY = e.touches[0].clientY;
+      const diff = touchY - startY;
+
+      // если тянем вниз — блокируем скролл страницы
+      if (diff > 0) {
+        e.preventDefault(); // ❗ блокируем прокрутку страницы
+        e.stopPropagation(); // ❗ не даём событию уйти вверх
+      }
+
+      currentY = touchY;
+
+      if (diff > 0) {
+        // тянем меню вниз вместе с пальцем
+        menu.style.transform = `translateY(${diff}px)`;
+      }
+    };
+
+    const onTouchEnd = () => {
+      if (!dragging) return;
+
+      dragging = false;
+
+      const diff = currentY - startY;
+
+      if (diff > 60) {
+        setOpen(false); // свайп вниз → закрыть
+      }
+
+      // вернуть меню на место
+      menu.style.transform = "";
+    };
+
+    menu.addEventListener("touchstart", onTouchStart, { passive: false });
+    menu.addEventListener("touchmove", onTouchMove, { passive: false });
+    menu.addEventListener("touchend", onTouchEnd);
+
+    return () => {
+      menu.removeEventListener("touchstart", onTouchStart);
+      menu.removeEventListener("touchmove", onTouchMove);
+      menu.removeEventListener("touchend", onTouchEnd);
+    };
   }, [open]);
 
   const servicesLinks = {

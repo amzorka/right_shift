@@ -295,7 +295,7 @@
   }
 
   .arrow-first {
-    right: 0;
+    right: -15px;
   }
 
   .arrow.open {
@@ -312,6 +312,75 @@
       transform: translateY(0);
     }
   }
+}
+
+.contact-success {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 80px 0;
+}
+
+.contact-success__card {
+  width: 575px;
+  max-width: 100%;
+  min-height: 460px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #1c1b1a; // как фон секции
+}
+
+.contact-success__smile {
+  font-family: "GT Eesti Pro Display", sans-serif;
+  font-size: 128px;
+  line-height: 1;
+  color: rgba(245, 243, 240, 0.4);
+  margin-bottom: 80px;
+  font-weight: 100;
+}
+
+.contact-success__title {
+  font-family: "GT Eesti Pro Display", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #f5f3f0;
+  margin: 0 0 30px 0;
+}
+
+.contact-success__text {
+  font-family: "GT Eesti Pro Display", sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  line-height: 150%;
+  color: rgba(245, 243, 240, 0.9);
+  margin: 0 0 12px 0;
+
+  span {
+    font-weight: 400;
+    color: #ffffff;
+  }
+}
+
+.contact-success__link {
+  margin-top: 28px;
+  font-family: "GT Eesti Pro Display", sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  line-height: 150%;
+  color: #f5f3f0;
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -385,5 +454,36 @@
     .arrow-first {
       right: 15px;
     }
+  }
+
+  .contact-success {
+    padding: 60px 0;
+  }
+
+  .contact-success__card {
+    width: 100%;
+    min-height: auto;
+    padding: 65px 20px;
+  }
+
+  .contact-success__smile {
+    font-size: 100px;
+  }
+
+  .contact-success__title {
+    font-size: 18px;
+  }
+
+  .contact-success__text {
+    margin-bottom: 30px;
+  }
+
+  .contact-success__text:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .contact-success__text,
+  .contact-success__link {
+    font-size: 14px;
   }
 }

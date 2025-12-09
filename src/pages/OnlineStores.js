@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import MobileHeader from "../components/MobileHeader";
 import OnlineStoresCards from "../components/online-stores/OnlineStoresCards";
 import OnlineStoresIntro from "../components/online-stores/OnlineStoresIntro";
-import WhyRightShift from "../components/online-stores/WhyRightShift";
+import WhyRightShift from "../components/WhyRightShift";
 import ContactForm from "../components/home/ContactForm";
 import "../scss/OnlineStores.scss";
 import { initSmoothScroll } from "../utils/lenis";

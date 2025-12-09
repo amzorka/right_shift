@@ -10,7 +10,7 @@
     margin: 0 auto;
     padding-top: 50px;
     padding-bottom: 80px;
-    border-top: 1px solid #1c1b1a;
+    border-top: 1px solid rgba(28, 27, 26, 0.2);
     margin-top: 30px;
   }
 
@@ -184,7 +184,6 @@
   .cases2__images-row {
     display: flex !important;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
     gap: 0 !important; /* убирает пробелы */
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -213,7 +212,6 @@
   .cases2__grid {
     display: flex !important;
     overflow-x: auto !important;
-    scroll-snap-type: x mandatory;
     gap: 0 !important;
 
     -webkit-overflow-scrolling: touch;

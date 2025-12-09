@@ -107,6 +107,13 @@
     .marketing-card {
       width: 100%;
       height: auto;
+
+      &__button,
+      a {
+        height: 50px;
+        width: 100% !important;
+        max-width: 300px;
+      }
     }
   }
 }

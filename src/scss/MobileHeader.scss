@@ -156,12 +156,12 @@
   }
 }
 
-body.menu-open {
-  height: 90dvh;
-  position: fixed;
-  width: 100%;
-  overflow: hidden;
-}
+// body.menu-open {
+//   height: 90dvh;
+//   position: fixed;
+//   width: 100%;
+//   overflow: hidden;
+// }
 
 @media (max-height: 750px) {
   .mmenu__link {

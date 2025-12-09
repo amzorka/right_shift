@@ -67,7 +67,7 @@
   &__divider {
     width: 1180px;
     height: 1px;
-    background: #1c1b1a;
+    background: rgba(28, 27, 26, 0.2);
     margin: 30px 0;
   }
 
@@ -171,13 +171,13 @@
   .cases__slider {
     display: flex;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
     gap: 20px;
 
     padding-bottom: 10px;
     margin-top: 20px;
 
     -webkit-overflow-scrolling: touch; /* iOS smooth swipe */
+    scroll-behavior: smooth; /* плавность инерции */
   }
 
   .cases__slider::-webkit-scrollbar {
@@ -186,7 +186,6 @@
 
   .cases__slide {
     flex: 0 0 auto;
-    scroll-snap-align: start;
   }
 
   .cases__slide img {

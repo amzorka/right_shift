@@ -28,6 +28,7 @@ export default function ContactForm() {
   const [details, setDetails] = useState("");
   const [errors, setErrors] = useState({});
   const [isSending, setIsSending] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false); // <-- НОВОЕ
 
   // Автоподстановка услуги на основе URL
   useEffect(() => {
@@ -75,6 +76,7 @@ export default function ContactForm() {
 
     try {
       setIsSending(true);
+      setIsSuccess(false);
 
       const response = await fetch("http://217.199.252.128:3001/send", {
         method: "POST",
@@ -90,18 +92,28 @@ export default function ContactForm() {
 
       if (window.ym) window.ym(105637380, "reachGoal", "form_submit");
 
-      alert("Спасибо! Ваша заявка отправлена.");
-
       setProjectType("");
       setName("");
       setContactValue("");
       setDetails("");
+
+      setIsSuccess(true);
     } catch (err) {
       console.error(err);
       alert("Не удалось отправить заявку. Попробуйте позже.");
     } finally {
       setIsSending(false);
     }
+  };
+
+  const handleNewRequest = () => {
+    setIsSuccess(false);
+    // форму уже очистили после успешной отправки, но на всякий случай:
+    setProjectType("");
+    setName("");
+    setContactValue("");
+    setDetails("");
+    setErrors({});
   };
 
   return (
@@ -160,165 +172,200 @@ export default function ContactForm() {
         )}
 
         <div className="contact__right">
-          <h3 className="contact__form-title">Пару слов о вашей задаче</h3>
+          {isSuccess ? (
+            <div className="contact-success">
+              <div className="contact-success__card">
+                <div className="contact-success__smile">:)</div>
 
-          <form className="contact__form" onSubmit={handleSubmit}>
-            {/* Проект */}
-            {/* Выбор проекта */}
-            <div className="contact__dropdown">
-              <input
-                type="text"
-                className={`contact__input contact__input--select ${
-                  isProjectOpen ? "open" : ""
-                } ${errors.projectType ? "error" : ""}`}
-                placeholder="Что будем делать? Нажмите для выбора / введите свое"
-                value={projectType}
-                onChange={(e) => {
-                  setProjectType(e.target.value);
-                  setIsProjectOpen(true);
-                }}
-                onFocus={() => setIsProjectOpen(true)}
-                onBlur={() => setTimeout(() => setIsProjectOpen(false), 200)}
-              />
-              <img
-                src={chevron}
-                alt=""
-                className={`arrow arrow-first ${isProjectOpen ? "open" : ""}`}
-                width={15}
-                height={8}
-                draggable={false}
-                onClick={() => setIsProjectOpen(!isProjectOpen)}
-              />
+                <h3 className="contact-success__title">
+                  Отлично, ваша заявка отправлена
+                </h3>
 
-              {isProjectOpen && (
-                <div className="contact__dropdown-list">
-                  {projectOptions
-                    .filter((opt) =>
-                      opt.toLowerCase().includes(projectType.toLowerCase())
-                    )
-                    .map((option) => (
-                      <div
-                        key={option}
-                        className="contact__dropdown-item"
-                        onMouseDown={() => {
-                          setProjectType(option);
-                          setIsProjectOpen(false);
-                        }}
-                      >
-                        {option}
-                      </div>
-                    ))}
-                </div>
-              )}
-            </div>
+                <p className="contact-success__text">
+                  Совсем скоро мы вернёмся с вопросами и предложениями, чтобы
+                  точнее понять задачу и предложить лучший формат работы.
+                </p>
 
-            {/* Имя */}
-            <input
-              type="text"
-              className={`contact__input ${errors.name ? "error" : ""}`}
-              placeholder="Как к вам можно обращаться?"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
+                <p className="contact-success__text">
+                  Спасибо, что вы выбрали <span>right.shift</span>
+                </p>
 
-            {/* Контакт */}
-            <div className="contact__contact-row">
-              <div className="contact__select-wrapper">
-                <div
-                  className={`contact__input contact__input--select small ${
-                    isContactOpen ? "opened" : ""
-                  } ${errors.contactValue ? "error" : ""}`}
-                  onClick={() => setIsContactOpen(!isContactOpen)}
+                <button
+                  type="button"
+                  className="contact-success__link"
+                  onClick={handleNewRequest}
                 >
-                  {contactMethod}
+                  Отправить ещё одну заявку
+                </button>
+              </div>
+            </div>
+          ) : (
+            <>
+              <h3 className="contact__form-title">Пару слов о вашей задаче</h3>
+
+              <form className="contact__form" onSubmit={handleSubmit}>
+                {/* Проект */}
+                {/* Выбор проекта */}
+                <div className="contact__dropdown">
+                  <input
+                    type="text"
+                    className={`contact__input contact__input--select ${
+                      isProjectOpen ? "open" : ""
+                    } ${errors.projectType ? "error" : ""}`}
+                    placeholder="Что будем делать? Нажмите для выбора / введите свое"
+                    value={projectType}
+                    onChange={(e) => {
+                      setProjectType(e.target.value);
+                      setIsProjectOpen(true);
+                    }}
+                    onFocus={() => setIsProjectOpen(true)}
+                    onBlur={() =>
+                      setTimeout(() => setIsProjectOpen(false), 200)
+                    }
+                  />
                   <img
                     src={chevron}
                     alt=""
-                    className={`arrow ${isContactOpen ? "open" : ""}`}
+                    className={`arrow arrow-first ${
+                      isProjectOpen ? "open" : ""
+                    }`}
                     width={15}
                     height={8}
                     draggable={false}
+                    onClick={() => setIsProjectOpen(!isProjectOpen)}
                   />
-                </div>
-              </div>
 
-              <input
-                type="text"
-                className={`contact__input contact__input--half ${
-                  errors.contactValue ? "error" : ""
-                }`}
-                placeholder={
-                  contactMethod === "Telegram"
-                    ? "@vash_nickname"
-                    : contactMethod === "E-mail"
-                    ? "vasha_pochta@pochta.ru"
-                    : "+7 (999) 999-99-99"
-                }
-                value={contactValue}
-                onChange={(e) => setContactValue(e.target.value)}
-              />
-
-              {isContactOpen && (
-                <div className="contact__dropdown-list small">
-                  {contactOptions.map((option) => (
-                    <div
-                      key={option}
-                      className="contact__dropdown-item"
-                      onClick={() => {
-                        setContactMethod(option);
-                        setIsContactOpen(false);
-                      }}
-                    >
-                      {option}
+                  {isProjectOpen && (
+                    <div className="contact__dropdown-list">
+                      {projectOptions
+                        .filter((opt) =>
+                          opt.toLowerCase().includes(projectType.toLowerCase())
+                        )
+                        .map((option) => (
+                          <div
+                            key={option}
+                            className="contact__dropdown-item"
+                            onMouseDown={() => {
+                              setProjectType(option);
+                              setIsProjectOpen(false);
+                            }}
+                          >
+                            {option}
+                          </div>
+                        ))}
                     </div>
-                  ))}
+                  )}
                 </div>
-              )}
-            </div>
 
-            {/* Описание */}
-            <textarea
-              className="contact__textarea"
-              placeholder="Расскажите пару слов о проекте (по желанию)"
-              value={details}
-              onChange={(e) => setDetails(e.target.value)}
-            />
+                {/* Имя */}
+                <input
+                  type="text"
+                  className={`contact__input ${errors.name ? "error" : ""}`}
+                  placeholder="Как к вам можно обращаться?"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
 
-            {/* Подпись */}
-            <p className="contact__agreement">
-              Нажимая кнопку «Обсудить проект» вы соглашаетесь с{" "}
-              <a href="/privacy-policy">политикой конфиденциальности</a>
-            </p>
+                {/* Контакт */}
+                <div className="contact__contact-row">
+                  <div className="contact__select-wrapper">
+                    <div
+                      className={`contact__input contact__input--select small ${
+                        isContactOpen ? "opened" : ""
+                      } ${errors.contactValue ? "error" : ""}`}
+                      onClick={() => setIsContactOpen(!isContactOpen)}
+                    >
+                      {contactMethod}
+                      <img
+                        src={chevron}
+                        alt=""
+                        className={`arrow ${isContactOpen ? "open" : ""}`}
+                        width={15}
+                        height={8}
+                        draggable={false}
+                      />
+                    </div>
+                  </div>
 
-            {/* Кнопка */}
-            <button
-              className="intro-section__button"
-              style={{ marginBottom: "80px" }}
-              type="submit"
-              disabled={isSending}
-            >
-              <span className="intro-section__button-text">
-                {isSending ? "отправляем..." : "обсудить проект"}
-              </span>
-              <img
-                src={arrowIcon}
-                alt="Arrow icon"
-                className="intro-section__button-icon"
-              />
-            </button>
+                  <input
+                    type="text"
+                    className={`contact__input contact__input--half ${
+                      errors.contactValue ? "error" : ""
+                    }`}
+                    placeholder={
+                      contactMethod === "Telegram"
+                        ? "@vash_nickname"
+                        : contactMethod === "E-mail"
+                        ? "vasha_pochta@pochta.ru"
+                        : "+7 (999) 999-99-99"
+                    }
+                    value={contactValue}
+                    onChange={(e) => setContactValue(e.target.value)}
+                  />
 
-            {isMobile && (
-              <div className="contact__footer mobile">
-                <div className="philosophy__subblock">
-                  <div className="philosophy__square"></div>
-                  <h3 className="philosophy__subtitle">ОБРАТНАЯ СВЯЗЬ</h3>
+                  {isContactOpen && (
+                    <div className="contact__dropdown-list small">
+                      {contactOptions.map((option) => (
+                        <div
+                          key={option}
+                          className="contact__dropdown-item"
+                          onClick={() => {
+                            setContactMethod(option);
+                            setIsContactOpen(false);
+                          }}
+                        >
+                          {option}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                <p className="philosophy__subtext">
-                  5. Мы все посчитаем и предложим решение
+
+                {/* Описание */}
+                <textarea
+                  className="contact__textarea"
+                  placeholder="Расскажите пару слов о проекте (по желанию)"
+                  value={details}
+                  onChange={(e) => setDetails(e.target.value)}
+                />
+
+                {/* Подпись */}
+                <p className="contact__agreement">
+                  Нажимая кнопку «Обсудить проект» вы соглашаетесь с{" "}
+                  <a href="/privacy-policy">политикой конфиденциальности</a>
                 </p>
-              </div>
-            )}
-          </form>
+
+                {/* Кнопка */}
+                <button
+                  className="intro-section__button"
+                  style={{ marginBottom: "80px" }}
+                  type="submit"
+                  disabled={isSending}
+                >
+                  <span className="intro-section__button-text">
+                    {isSending ? "отправляем..." : "обсудить проект"}
+                  </span>
+                  <img
+                    src={arrowIcon}
+                    alt="Arrow icon"
+                    className="intro-section__button-icon"
+                  />
+                </button>
+
+                {isMobile && (
+                  <div className="contact__footer mobile">
+                    <div className="philosophy__subblock">
+                      <div className="philosophy__square"></div>
+                      <h3 className="philosophy__subtitle">ОБРАТНАЯ СВЯЗЬ</h3>
+                    </div>
+                    <p className="philosophy__subtext">
+                      5. Мы все посчитаем и предложим решение
+                    </p>
+                  </div>
+                )}
+              </form>
+            </>
+          )}
         </div>
       </div>
     </section>

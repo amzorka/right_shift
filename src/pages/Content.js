@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ContentCards from "../components/content/ContentCards";
 import ContentIntro from "../components/content/ContentIntro";
-import WhyRightShift from "../components/design/WhyRightShift";
+import WhyRightShift from "../components/WhyRightShift";
 import ContactForm from "../components/home/ContactForm";
 import "../scss/OnlineStores.scss";
 import { initSmoothScroll } from "../utils/lenis";

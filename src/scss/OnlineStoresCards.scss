@@ -140,8 +140,10 @@
         margin-bottom: 20px;
       }
 
-      &__button {
+      &__button,
+      a {
         width: 100%;
+        max-width: 300px;
       }
     }
   }

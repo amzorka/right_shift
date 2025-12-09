@@ -2,18 +2,19 @@
   background: #f5f3f0;
   display: flex;
   justify-content: center;
-  padding-top: 120px; // отступ от хэдера
-  padding-bottom: 100px;
+  padding-top: 160px !important; // отступ от хэдера
+  padding-bottom: 120px !important;
 
   .online-stores-intro__container {
     width: 1180px;
     display: flex;
-    align-items: center;
+    align-items: start !important;
     justify-content: space-between;
   }
 
   .online-stores-intro__text {
     max-width: 580px;
+    margin-top: 90px;
   }
 
   .online-stores-intro__title {
@@ -82,27 +83,57 @@
 
 @media (max-width: 768px) {
   .online-stores-intro {
+    padding-top: 105px !important;
+
     &__container {
       width: calc(100% - 40px) !important;
       flex-direction: column-reverse;
+      margin-bottom: 0 !important;
     }
 
     &__text {
-      width: 100%;
+      margin-top: 0px !important;
     }
 
     &__title {
       font-size: 28px !important;
       width: 100% !important;
+      margin-top: 0 !important;
     }
 
     &__subtitle {
       font-size: 16px !important;
       margin-bottom: 50px !important;
+      width: 100% !important;
     }
 
     &__image img {
       width: 100% !important;
+      height: auto !important;
     }
+  }
+
+  .landing-intro__button {
+    margin-bottom: 0 !important;
+  }
+
+  .corporatives-intro__button {
+    margin-bottom: 0;
+  }
+
+  .online-stores__button {
+    margin-bottom: 0;
+  }
+
+  .marketing-intro__button {
+    margin-bottom: 0;
+  }
+
+  .design-intro__button {
+    margin-bottom: 0;
+  }
+
+  .content-intro__button {
+    margin-bottom: 0 !important;
   }
 }

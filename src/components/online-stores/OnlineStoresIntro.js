@@ -18,7 +18,10 @@ export default function OnlineStoresIntro() {
             одной команде.
           </p>
 
-          <a href="#contact" className="intro-section__button">
+          <a
+            href="#contact"
+            className="intro-section__button online-stores__button"
+          >
             <span className="intro-section__button-text">обсудить детали</span>
             <img
               src={arrowIcon}

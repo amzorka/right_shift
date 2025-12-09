@@ -4,14 +4,26 @@ import arrowIcon from "../../icons/arrow-right.png"; // если у тебя и�
 
 export default function OnlineStoresIntro() {
   return (
-    <section className="online-stores-intro">
-      <div className="online-stores-intro__container">
-        <div className="online-stores-intro__text">
+    <section
+      className="online-stores-intro"
+      style={{ paddingTop: "140px", paddingBottom: "160px" }}
+    >
+      <div
+        className="online-stores-intro__container"
+        style={{ alignItems: "start" }}
+      >
+        <div
+          className="online-stores-intro__text"
+          style={{ marginTop: "130px" }}
+        >
           <h1 className="online-stores-intro__title">
             ДЕЛАЕМ ЭФФЕКТИВНЫЕ
             <br /> <span>ЛЕНДИНГ СТРАНИЦЫ</span>
           </h1>
-          <p className="online-stores-intro__subtitle">
+          <p
+            className="online-stores-intro__subtitle"
+            style={{ width: "575px", marginTop: "20px", marginBottom: "70px" }}
+          >
             Разрабатываем лендинги под ключ для любых ваших задач. Ведем к
             действию и собираем статистику, не забывая про лицо бренда. От
             тестирования стартапов, до продвижения бигтех брендов и
@@ -19,7 +31,10 @@ export default function OnlineStoresIntro() {
             результат.
           </p>
 
-          <a href="#contact" className="intro-section__button">
+          <a
+            href="#contact"
+            className="intro-section__button landing-intro__button"
+          >
             <span className="intro-section__button-text">обсудить проект</span>
             <img
               src={arrowIcon}

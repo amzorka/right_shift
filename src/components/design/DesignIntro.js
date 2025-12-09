@@ -4,14 +4,23 @@ import arrowIcon from "../../icons/arrow-right.png"; // если у тебя и�
 
 export default function OnlineStoresIntro() {
   return (
-    <section className="online-stores-intro">
-      <div className="online-stores-intro__container">
-        <div className="online-stores-intro__text">
+    <section
+      className="online-stores-intro"
+      style={{ paddingTop: "190px", paddingBottom: "160px" }}
+    >
+      <div
+        className="online-stores-intro__container"
+        style={{ alignItems: "start" }}
+      >
+        <div
+          className="online-stores-intro__text"
+          style={{ marginTop: "96px" }}
+        >
           <h1
             className="online-stores-intro__title"
             style={{ fontSize: "40px" }}
           >
-            UX/UI ДЛЯ БРЕНДОВ,
+            UX/UI ДИЗАЙН ДЛЯ БРЕНДОВ,
             <br /> <span>КОТОРЫЕ ГОТОВЫ К РОСТУ</span>
           </h1>
           <p className="online-stores-intro__subtitle">
@@ -21,7 +30,10 @@ export default function OnlineStoresIntro() {
             понял и захотел остаться.
           </p>
 
-          <a href="#contact" className="intro-section__button">
+          <a
+            href="#contact"
+            className="intro-section__button design-intro__button"
+          >
             <span className="intro-section__button-text">обсудить проект</span>
             <img
               src={arrowIcon}

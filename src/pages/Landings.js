@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import MobileHeader from "../components/MobileHeader";
 import LandingsCards from "../components/landings/LandingsCards";
 import LandingsIntro from "../components/landings/LandingsIntro";
-import WhyRightShift from "../components/online-stores/WhyRightShift";
+import WhyRightShift from "../components/WhyRightShift";
 import ContactForm from "../components/home/ContactForm";
 import "../scss/OnlineStores.scss";
 import { initSmoothScroll } from "../utils/lenis";

@@ -31,10 +31,9 @@ export function initSmoothScroll() {
   }
 
   function disableLenis() {
-    if (lenis && typeof lenis.destroy === "function") {
-      lenis.destroy();
+    if (lenis) {
+      lenis.stop(); // отключает обработку, но не ломает позицию
     }
-    lenis = null;
   }
 
   function checkDevice() {

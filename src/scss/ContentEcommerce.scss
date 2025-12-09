@@ -152,6 +152,16 @@
 }
 
 @media (max-width: 768px) {
+  .ecommerce {
+    &__text {
+      margin-bottom: 40px;
+    }
+
+    &__content {
+      gap: 0 !important;
+    }
+  }
+
   .content-grid {
     display: flex;
     flex-wrap: wrap;

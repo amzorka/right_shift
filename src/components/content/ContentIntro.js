@@ -4,12 +4,15 @@ import arrowIcon from "../../icons/arrow-right.png"; // если у тебя и�
 
 export default function OnlineStoresIntro() {
   return (
-    <section className="online-stores-intro">
+    <section className="online-stores-intro" style={{ paddingTop: "173px" }}>
       <div
         className="online-stores-intro__container"
-        style={{ alignItems: "end", marginBottom: "50px" }}
+        style={{ alignItems: "start", marginBottom: "50px" }}
       >
-        <div className="online-stores-intro__text">
+        <div
+          className="online-stores-intro__text"
+          style={{ marginTop: "162px" }}
+        >
           <h1
             className="online-stores-intro__title"
             style={{ fontSize: "40px", width: "663px" }}
@@ -17,14 +20,21 @@ export default function OnlineStoresIntro() {
             МЫ СОЗДАЕМ КОНТЕНТ, КОТОРЫЙ
             <br /> <span>ГОВОРИТ БОЛЬШЕ, ЧЕМ СЛОВА</span>
           </h1>
-          <p className="online-stores-intro__subtitle">
+          <p
+            className="online-stores-intro__subtitle"
+            style={{ marginBottom: "0" }}
+          >
             Мы создаём контент, формирующий правильное первое впечатление,
             удерживает внимание пользователя и прямо работает на конверсию — от
             графики и 3D до реальных фотосъёмок и AI-генераций, неотличимых от
             студийных.
           </p>
 
-          <a href="#contact" className="intro-section__button">
+          <a
+            href="#contact"
+            className="intro-section__button content-intro__button"
+            style={{ marginBottom: "50px" }}
+          >
             <span className="intro-section__button-text">обсудить детали</span>
             <img
               src={arrowIcon}
