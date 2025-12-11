@@ -78,6 +78,8 @@
     height: 391px;
     width: auto;
     object-fit: contain;
+    position: absolute;
+    right: 0;
   }
 
   &__image2 {
@@ -85,7 +87,7 @@
   }
 }
 
-@media (min-width: 1281px) {
+@media (min-width: 1919px) {
   .ecommerce {
     &__image {
       display: none;

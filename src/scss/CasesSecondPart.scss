@@ -34,6 +34,7 @@
   }
 
   &__text {
+    width: 500px;
     font-family: "GT Eesti Pro Display";
     font-weight: 100;
     font-size: 14px;
@@ -187,8 +188,12 @@
     gap: 0 !important; /* убирает пробелы */
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    margin-left: 20px;
-    margin-right: 20px;
+
+    /* full-bleed */
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .cases2__images-row::-webkit-scrollbar {
@@ -217,8 +222,10 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
 
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-bottom: 10px;
   }
 
