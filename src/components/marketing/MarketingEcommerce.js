@@ -54,7 +54,7 @@ export default function EcommerceSection() {
           <img
             src={ecommerceImage2}
             alt="Ecommerce example"
-            className="ecommerce__image2"
+            className="ecommerce__image2 marketing__ecommerce-img"
           />
         </div>
       </div>
