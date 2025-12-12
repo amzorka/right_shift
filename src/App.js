@@ -17,6 +17,7 @@ import About from "./pages/About";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Contacts from "./pages/Contacts";
 import ScrollTracker from "./components/ScrollTracker";
+import useTypography from "./hooks/useTypography";
 
 const METRIKA_ID = 105637380; // <-- подставь сюда настоящий ID
 
@@ -34,6 +35,8 @@ function MetrikaTracker() {
 }
 
 function App() {
+  useTypography();
+
   return (
     <div className="App">
       <Router>
