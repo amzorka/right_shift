@@ -31,14 +31,16 @@ export default function IntroSection() {
 
   return (
     <section className="intro-section">
-      <div className="intro-section__container">
-        {isMobile && (
-          <div className="intro__grid-wrapper">
-            <div className="intro__grid-glow"></div>
-            <img src={grid} alt="" className="intro__grid" />
-          </div>
-        )}
+      {isMobile && (
+        <>
+          <div className="about__grid-bg" />
 
+          <div className="about__glows">
+            <div className="about__glow about__glow--3" />
+          </div>
+        </>
+      )}
+      <div className="intro-section__container">
         <h1 className="intro-section__title">RIGHT.SHIFT</h1>
 
         {isMobile && (
