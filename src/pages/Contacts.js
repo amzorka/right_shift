@@ -44,7 +44,7 @@ export default function Contacts() {
               <p className="contacts__label">Telegram</p>
             </div>
             <a
-              href="https://t.me/rightshift_dev"
+              href="https://t.me/rightshift_dev?direct"
               className="contacts__link contacts__link--big"
               onClick={() =>
                 window.ym && window.ym(105637380, "reachGoal", "click_telegram")
