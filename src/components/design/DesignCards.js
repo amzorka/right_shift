@@ -1,10 +1,8 @@
 import "../../scss/DesignCards.scss";
 import clockIcon from "../../icons/clock.png";
 import moneyIcon from "../../icons/money.png";
-import analyticsIcon from "../../icons/analytics.png";
 import seoIcon from "../../icons/seo.png";
 import designIcon from "../../icons/design.png";
-import consultingIcon from "../../icons/consulting.png";
 
 export default function OnlineStoresCards() {
   return (

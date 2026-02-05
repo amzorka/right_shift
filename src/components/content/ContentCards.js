@@ -36,7 +36,11 @@ export default function OnlineStoresCards() {
           </ul>
 
           <div className="trend">
-            <img src={trend} style={{ width: "15px", height: "auto" }} />
+            <img
+              src={trend}
+              alt="trend"
+              style={{ width: "15px", height: "auto" }}
+            />
             <p>тренд</p>
           </div>
 

@@ -1,6 +1,5 @@
 import "../../scss/About.scss";
 import about from "../../images/about.png";
-import grid from "../../images/about-grid.png";
 
 export default function AboutIntro() {
   return (

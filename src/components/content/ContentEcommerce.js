@@ -17,41 +17,49 @@ export default function EcommerceSection() {
     <>
       <img
         src={img1}
+        alt="img"
         className="content__image1"
         style={{ width: "135px", height: "180px" }}
       />
       <img
         src={img2}
+        alt="img"
         className="content__image2"
         style={{ width: "131px", height: "180px" }}
       />
       <img
         src={img3}
+        alt="img"
         className="content__image3"
         style={{ width: "auto", height: "180px" }}
       />
       <img
         src={img3l}
+        alt="img"
         className="content__image3-l"
         style={{ width: "283px", height: "180px" }}
       />
       <img
         src={img4}
+        alt="img"
         className="content__image4"
         style={{ width: "124px", height: "180px" }}
       />
       <img
         src={img5}
+        alt="img"
         className="content__image5"
         style={{ width: "135px", height: "180px" }}
       />
       <img
         src={img6}
+        alt="img"
         className="content__image6"
         style={{ width: "auto", height: "180px" }}
       />
       <img
         src={img6l}
+        alt="img"
         className="content__image6-l"
         style={{ width: "283px", height: "180px" }}
       />
@@ -63,32 +71,38 @@ export default function EcommerceSection() {
     <>
       <img
         src={img1}
+        alt="img"
         className="content__image1"
         style={{ width: "90px", height: "120px" }}
       />
       <img
         src={img2}
+        alt="img"
         className="content__image2"
         style={{ width: "88px", height: "120px" }}
       />
       <img
         src={img3l}
+        alt="img"
         className="content__image3-l"
         style={{ width: "154px", height: "120px" }}
       />
 
       <img
         src={img4}
+        alt="img"
         className="content__image4"
         style={{ width: "90px", height: "120px" }}
       />
       <img
         src={img6l}
+        alt="img"
         className="content__image6-l"
         style={{ width: "160px", height: "120px" }}
       />
       <img
         src={img5}
+        alt="img"
         className="content__image5"
         style={{ width: "90px", height: "120px" }}
       />

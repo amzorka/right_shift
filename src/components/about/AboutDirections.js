@@ -1,5 +1,4 @@
 import arrowBlack from "../../icons/arrow-dark.png";
-import arrowWhite from "../../icons/arrow-right.png";
 import "../../scss/AboutDirections.scss";
 
 export default function AboutDirections() {
