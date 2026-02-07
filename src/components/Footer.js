@@ -58,7 +58,7 @@ export default function Footer() {
                   window.ym(105637380, "reachGoal", "click_telegram")
                 }
                 style={{ textDecoration: "none", color: "inherit" }}
-                href="https://t.me/rightshift_dev?direct"
+                href="https://t.me/rightshift_dev"
               >
                 @rightshift_dev
               </a>
