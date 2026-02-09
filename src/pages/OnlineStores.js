@@ -8,11 +8,9 @@ import OnlineStoresIntro from "../components/online-stores/OnlineStoresIntro";
 import WhyRightShift from "../components/WhyRightShift";
 import ContactForm from "../components/home/ContactForm";
 import "../scss/OnlineStores.scss";
-import { initSmoothScroll } from "../utils/lenis";
 import { useMobile } from "../hooks/useMobile";
 
 export default function OnlineStores() {
-  const lenis = initSmoothScroll();
   const isMobile = useMobile();
 
   return (

@@ -7,11 +7,9 @@ import { useMobile } from "../hooks/useMobile";
 import MobileHeader from "../components/MobileHeader";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { initSmoothScroll } from "../utils/lenis";
 
 export default function Contacts() {
   const isMobile = useMobile();
-  const lenis = initSmoothScroll();
 
   return (
     <section className="contacts">
